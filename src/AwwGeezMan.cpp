@@ -24,11 +24,26 @@ exists a Morty who says everything backwards.
 
 
 int main (int ac, char** av) {
+	int start, stop, step;
+	char dimension[5];
+	
 	// Parse the command line arguments. The program is executed as
 	// ./AwwGeezMan {start} {stop} {dimension}
 	// or 
 	// ./AwwGeezMan {start} {stop} {step} {dimension}
-	if (ac != 4 and ac != 5) {
+	if (ac == 4) {
+		start = av[1];
+		stop = av[2];
+		step = 1;
+		dimension = av[3];
+	}
+	else if (ac == 5) {
+		start = av[1];
+		stop = av[2];
+		step = av[3];
+		dimension = av[4];
+	}
+	else if (ac != 4 and ac != 5) {
 		std::cout << "Error: Command line arguments are incorrect. Call program as (1) or (2)" 
 			<< std::endl;
 		std::cout << "(1)\t./AwwGeezMan {start} {stop} {dimension}" << std::endl;
@@ -42,7 +57,20 @@ int main (int ac, char** av) {
 		
 	// Depending on the dimension of the arguments, call the appropriate Morty
 	// function
-	
+	if(dimension == "C137"){
+		std::cout << "Morty C137 says:" << std::endl;
+		if (step == 1)
+			C137::Morty(start, stop, dimension);
+		else
+			C137::Morty(start, stop, step, dimension);
+	}
+	if(dimension == "Z286") {
+		std::cout << "Morty Z286 says:" << std::endl;
+		if (step == 1)
+			Z286::Morty(start, stop, dimension);
+		else
+			Z286::Morty(start, stop, step, dimension);
+	}
 	
 	return 0;
 }
