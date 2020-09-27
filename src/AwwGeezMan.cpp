@@ -19,58 +19,58 @@ exists a Morty who says everything backwards.
 
 */
 
+
 // Include the Morty header file
 #include "Morty.hpp"
+#include <iostream>
+#define _CRT_SECURE_NO_WARNINGS
 
+int main(int ac, char** av) {
+	int start = 0, stop = 0, step = 1;
+	char* dimension = av[1];
 
-int main (int ac, char** av) {
-	int start, stop, step;
-	char dimension[5];
-	
 	// Parse the command line arguments. The program is executed as
 	// ./AwwGeezMan {start} {stop} {dimension}
 	// or 
 	// ./AwwGeezMan {start} {stop} {step} {dimension}
 	if (ac == 4) {
-		start = av[1];
-		stop = av[2];
+		start = atoi(av[1]);
+		stop = atoi(av[2]);
 		step = 1;
 		dimension = av[3];
+		std::cout << "Test start: " << start << " stop: " << stop << "step: " << step << std::endl;
 	}
 	else if (ac == 5) {
-		start = av[1];
-		stop = av[2];
-		step = av[3];
-		dimension = av[4];
+		start = atoi(av[1]);
+		stop = atoi(av[2]);
+		step = atoi(av[3]);
+		//dimension = av[4];
+		std::cout << "Test start: " << start << " stop: " << stop << "step: " << step << std::endl;
 	}
 	else if (ac != 4 and ac != 5) {
-		std::cout << "Error: Command line arguments are incorrect. Call program as (1) or (2)" 
+		std::cout << "Error: Command line arguments are incorrect. Call program as (1) or (2)"
 			<< std::endl;
 		std::cout << "(1)\t./AwwGeezMan {start} {stop} {dimension}" << std::endl;
 		std::cout << "(2)\t./AwwGeezMan {start} {stop} {step} {dimension}" << std::endl;
-		
+
 		return -1;
 	}
-	
-	// Parse the command line arguments
-	
-		
-	// Depending on the dimension of the arguments, call the appropriate Morty
-	// function
-	if(dimension == "C137"){
+
+	// Depending on the dimension of the arguments, call the appropriate Morty function
+	if (!(strcmp(dimension, "C137"))) {
 		std::cout << "Morty C137 says:" << std::endl;
 		if (step == 1)
-			C137::Morty(start, stop, dimension);
+			C137::Morty(start, stop);
 		else
-			C137::Morty(start, stop, step, dimension);
+			C137::Morty(start, stop, step);
 	}
-	if(dimension == "Z286") {
+	if (!(strcmp(dimension, "Z286"))) {
 		std::cout << "Morty Z286 says:" << std::endl;
 		if (step == 1)
-			Z286::Morty(start, stop, dimension);
+			Z286::Morty(start, stop);
 		else
-			Z286::Morty(start, stop, step, dimension);
+			Z286::Morty(start, stop, step);
 	}
-	
+
 	return 0;
 }
