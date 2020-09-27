@@ -38,14 +38,12 @@ int main(int ac, char** av) {
 		stop = atoi(av[2]);
 		step = 1;
 		dimension = av[3];
-		std::cout << "Test start: " << start << " stop: " << stop << "step: " << step << std::endl;
 	}
 	else if (ac == 5) {
 		start = atoi(av[1]);
 		stop = atoi(av[2]);
 		step = atoi(av[3]);
 		dimension = av[4];
-		std::cout << "Test start: " << start << " stop: " << stop << "step: " << step << std::endl;
 	}
 	else if (ac != 4 and ac != 5) {
 		std::cout << "Error: Command line arguments are incorrect. Call program as (1) or (2)"
