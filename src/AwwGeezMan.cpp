@@ -44,7 +44,7 @@ int main(int ac, char** av) {
 		start = atoi(av[1]);
 		stop = atoi(av[2]);
 		step = atoi(av[3]);
-		//dimension = av[4];
+		dimension = av[4];
 		std::cout << "Test start: " << start << " stop: " << stop << "step: " << step << std::endl;
 	}
 	else if (ac != 4 and ac != 5) {
