@@ -62,12 +62,15 @@ int main(int ac, char** av) {
 		else
 			C137::Morty(start, stop, step);
 	}
-	if (!(strcmp(dimension, "Z286"))) {
+	else if (!(strcmp(dimension, "Z286"))) {
 		std::cout << "Morty Z286 says:" << std::endl;
 		if (step == 1)
 			Z286::Morty(start, stop);
 		else
 			Z286::Morty(start, stop, step);
+	}
+	else {
+		std::cout << "ERROR: Unknown dimension!!" << std::endl;
 	}
 
 	return 0;
