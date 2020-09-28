@@ -8,8 +8,7 @@
 */
 
 // Include the Morty header file
-#include "../src/Morty.hpp"
-#include <cstdlib>
+#include "Morty.hpp"
 
 // =========================================================================== // 
 //          Define functions enclosed in Namespace C137 here 
