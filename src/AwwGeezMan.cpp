@@ -21,7 +21,7 @@ exists a Morty who says everything backwards.
 
 
 // Include the Morty header file
-#include "../src/Morty.hpp"
+#include "Morty.hpp"
 #include <iostream>
 #define _CRT_SECURE_NO_WARNINGS
 
