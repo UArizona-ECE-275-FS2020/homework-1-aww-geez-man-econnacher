@@ -23,6 +23,7 @@ exists a Morty who says everything backwards.
 // Include the Morty header file
 #include "Morty.hpp"
 #include <iostream>
+#include <string.h>
 #define _CRT_SECURE_NO_WARNINGS
 
 int main(int ac, char** av) {
