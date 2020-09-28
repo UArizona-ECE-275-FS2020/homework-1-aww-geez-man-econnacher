@@ -30,8 +30,7 @@ int main(int ac, char** av) {
 	char* dimension = av[1];
 
 	// Parse the command line arguments. The program is executed as
-	// ./AwwGeezMan {start} {stop} {dimension}
-	// or 
+	// ./AwwGeezMan {start} {stop} {dimension}  or 
 	// ./AwwGeezMan {start} {stop} {step} {dimension}
 	if (ac == 4) {
 		start = atoi(av[1]);
